@@ -1,19 +1,31 @@
 {
   "name": "gatsby-starter-hello-friend",
+  "version": "0.2.1",
   "description": "A simple starter for Gatsby. That's it.",
-  "version": "0.2.0",
-  "author": "Radek Kozieł <radoslaw.koziel@gmail.com>",
   "keywords": [
-    "gatsby",
-    "minimal",
-    "starter",
     "blog",
-    "theme",
     "dark",
+    "gatsby",
     "light",
-    "personal site"
+    "minimal",
+    "personal site",
+    "starter",
+    "theme"
   ],
+  "homepage": "https://github.com/panr/gatsby-starter-hello-friend#readme",
+  "bugs": {
+    "url": "https://github.com/panr/gatsby-starter-hello-friend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panr/gatsby-starter-hello-friend.git"
+  },
   "license": "MIT",
+  "author": "Radek Kozieł <radoslaw.koziel@gmail.com> (https://radoslawkoziel.pl/)",
+  "contributors": [
+    "Martin Rosenberg <Martin.B.Rosenberg@gmail.com> (https://martinbrosenberg.com/)",
+    "Nam Nguyen Hoai <mr.nguyenhoainam@gmail.com> (https://ene.im)"
+  ],
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby clean && gatsby develop",
@@ -62,12 +74,5 @@
     "postcss-url": "^8.0.0",
     "prettier": "^1.15.2",
     "rambdax": "^1.8.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/panr/gatsby-starter-hello-friend"
-  },
-  "bugs": {
-    "url": "https://github.com/panr/gatsby-starter-hello-friend/issues"
   }
 }
