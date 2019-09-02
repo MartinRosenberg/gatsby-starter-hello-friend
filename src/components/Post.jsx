@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import Navigation from './Navigation'
-import { toKebabCase } from '../helpers'
+import * as PropTypes from 'prop-types'
+import React from 'react'
 
+import { toKebabCase } from '../helpers'
 import style from '../styles/post.module.css'
+import Navigation from './Navigation'
 
 const Post = ({
   title,

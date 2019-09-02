@@ -1,5 +1,5 @@
-import React from 'react'
 import * as PropTypes from 'prop-types'
+import React from 'react'
 
 const Footer = ({ copyrights }) => (
   <footer>

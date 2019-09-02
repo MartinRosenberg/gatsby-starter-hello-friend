@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import * as PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import Icon from './Icon'
-
 import style from '../styles/menu.module.css'
+import Icon from './Icon'
 
 const MainMenu = ({ mainMenu, mainMenuItems, isMobileMenu }) => {
   const menu = mainMenu.slice(0)
