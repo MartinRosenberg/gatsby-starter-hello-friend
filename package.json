@@ -27,10 +27,14 @@
     "Nam Nguyen Hoai <mr.nguyenhoainam@gmail.com> (https://ene.im)"
   ],
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby clean && gatsby develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "build": "yarn clean && gatsby build",
+    "clean": "gatsby clean",
+    "dev": "yarn clean && gatsby develop",
+    "format": "prettier --ignore-path .gitignore --write '**/*.{js,jsx,css,scss,html,md}'",
+    "lint": "eslint --ignore-path .gitignore --ext js,jsx .",
+    "lint:fix": "yarn lint --fix",
+    "serve": "gatsby serve",
+    "test": "echo 'Write tests! -> https://gatsby.app/unit-testing'"
   },
   "dependencies": {
     "gatsby": "^2.15.2",
