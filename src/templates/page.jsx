@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Post from '../components/post'
+import Seo from '../components/Seo'
+import Layout from '../components/Layout'
+import Post from '../components/Post'
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const {
@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt || autoExcerpt} />
+      <Seo title={title} description={excerpt || autoExcerpt} />
       <Post
         key={id}
         title={title}
