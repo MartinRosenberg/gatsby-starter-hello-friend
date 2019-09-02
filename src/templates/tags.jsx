@@ -1,12 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Seo from '../components/Seo'
-import Layout from '../components/Layout'
-import Post from '../components/Post'
-import Navigation from '../components/Navigation'
-
 import '../styles/layout.css'
+
+import { graphql } from 'gatsby'
+import * as PropTypes from 'prop-types'
+import React from 'react'
+
+import Layout from '../components/Layout'
+import Navigation from '../components/Navigation'
+import Post from '../components/Post'
+import Seo from '../components/Seo'
 
 const Tags = ({
   data,

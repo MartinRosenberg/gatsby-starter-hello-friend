@@ -1,5 +1,5 @@
+import * as PropTypes from 'prop-types'
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import style from '../styles/icon.module.css'
 
