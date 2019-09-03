@@ -1,15 +1,15 @@
 import '../styles/layout.css'
 
-import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import * as PropTypes from 'prop-types'
-import { graphql, useStaticQuery} from 'gatsby'
+import React from 'react'
 
 import Footer from './Footer'
 import Header from './Header'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query Layout {
       site {
         siteMetadata {
           title
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
           }
           logoText
           defaultTheme
-          copyrights
+          copyright
           mainMenu {
             title
             path
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
     mainMenu,
     showMenuItems,
     menuMoreText,
-    copyrights,
+    copyright,
   } = data.site.siteMetadata
 
   return (
@@ -52,8 +52,10 @@ const Layout = ({ children }) => {
         mainMenuItems={showMenuItems}
         menuMoreText={menuMoreText}
       />
-      <div className="content">{children}</div>
-      <Footer copyrights={copyrights} />
+      <div className="content">
+        {children}
+      </div>
+      <Footer copyright={copyright} />
     </div>
   )
 }

@@ -7,10 +7,10 @@ const postCSSMixins = require('postcss-mixins')
 
 module.exports = {
   siteMetadata: {
-    title: `Hello Friend`,
+    title: 'Hello Friend',
     description: `A simple starter for Gatsby. That's it.`,
     copyrights: '',
-    author: `@panr`,
+    author: '@panr',
     logo: {
       src: '',
       alt: '',
@@ -36,31 +36,31 @@ module.exports = {
     ],
   },
   plugins: [
-    `babel-preset-gatsby`,
-    `gatsby-plugin-react-helmet`,
+    'babel-preset-gatsby',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `posts`,
+        name: 'posts',
         path: `${__dirname}/src/posts`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `pages`,
+        name: 'pages',
         path: `${__dirname}/src/pages`,
       },
     },
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
           postCSSUrl(),
@@ -78,10 +78,10 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
@@ -92,14 +92,14 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 800,
               quality: 100,
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
@@ -112,15 +112,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `gatsby-starter-hello-friend`,
-        short_name: `hello-friend`,
-        start_url: `/`,
-        background_color: `#292a2d`,
-        theme_color: `#292a2d`,
-        display: `minimal-ui`,
-        icon: `src/images/hello-icon.png`,
+        name: 'gatsby-starter-hello-friend',
+        short_name: 'hello-friend',
+        start_url: '/',
+        background_color: '#292a2d',
+        theme_color: '#292a2d',
+        display: 'minimal-ui',
+        icon: 'src/images/hello-icon.png',
       },
     },
   ],
