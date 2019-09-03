@@ -7,54 +7,51 @@ import Navigation from '../components/Navigation'
 import Post from '../components/Post'
 import Seo from '../components/Seo'
 
-const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
-  const {
-    allMarkdownRemark: { edges: posts },
-  } = data
+const Index = ({
+  data: { allMarkdownRemark: { edges: posts } },
+  pageContext: { nextPagePath, previousPagePath },
+}) => (
+  <>
+    <Seo />
+    <Layout>
+      {posts.map(({ node }) => {
+        const {
+          id,
+          excerpt: autoExcerpt,
+          frontmatter: {
+            title,
+            date,
+            path,
+            author,
+            coverImage,
+            excerpt,
+            tags,
+          },
+        } = node
 
-  return (
-    <>
-      <Seo />
-      <Layout>
-        {posts.map(({ node }) => {
-          const {
-            id,
-            excerpt: autoExcerpt,
-            frontmatter: {
-              title,
-              date,
-              path,
-              author,
-              coverImage,
-              excerpt,
-              tags,
-            },
-          } = node
+        return (
+          <Post
+            key={id}
+            title={title}
+            date={date}
+            path={path}
+            author={author}
+            coverImage={coverImage}
+            tags={tags}
+            excerpt={excerpt || autoExcerpt}
+          />
+        )
+      })}
 
-          return (
-            <Post
-              key={id}
-              title={title}
-              date={date}
-              path={path}
-              author={author}
-              coverImage={coverImage}
-              tags={tags}
-              excerpt={excerpt || autoExcerpt}
-            />
-          )
-        })}
-
-        <Navigation
-          previousPath={previousPagePath}
-          previousLabel="Newer posts"
-          nextPath={nextPagePath}
-          nextLabel="Older posts"
-        />
-      </Layout>
-    </>
-  )
-}
+      <Navigation
+        previousPath={previousPagePath}
+        previousLabel="Newer posts"
+        nextPath={nextPagePath}
+        nextLabel="Older posts"
+      />
+    </Layout>
+  </>
+)
 
 Index.propTypes = {
   data: PropTypes.object.isRequired,
@@ -65,7 +62,7 @@ Index.propTypes = {
 }
 
 export const postsQuery = graphql`
-  query($limit: Int!, $skip: Int!) {
+  query Index($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//posts//" } }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -78,7 +75,7 @@ export const postsQuery = graphql`
           excerpt
           frontmatter {
             title
-            date(formatString: "DD MMMM YYYY")
+            date(formatString: "D MMMM YYYY")
             path
             author
             excerpt

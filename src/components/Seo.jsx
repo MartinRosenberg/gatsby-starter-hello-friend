@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 
 const Seo = ({ description, lang, meta, keywords, title }) => {
   const data = useStaticQuery(graphql`
-    query DefaultSEOQuery {
+    query Seo {
       site {
         siteMetadata {
           title
@@ -32,53 +32,49 @@ const Seo = ({ description, lang, meta, keywords, title }) => {
       titleTemplate={title ? `${title} :: ${siteTitle}` : siteTitle}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          name: 'keywords',
+          content: keywords.join(', '),
+        },
+        {
+          property: 'og:title',
           content: metaTitle,
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website',
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: 'twitter:card',
+          content: 'summary',
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: metaTitle,
         },
         {
-          name: `twitter:description`,
+          name: 'twitter:description',
           content: metaDescription,
         },
         {
-          name: `twitter:creator`,
+          name: 'twitter:creator',
           content: author,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : [],
-        )
-        .concat(meta)}
+        ...meta,
+      ]}
     />
   )
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: 'en',
   meta: [],
   keywords: [
     'gatsby',

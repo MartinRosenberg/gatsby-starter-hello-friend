@@ -45,11 +45,11 @@ BlogPostTemplate.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query($path: String) {
+  query Page($path: String) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
-        date(formatString: "DD MMMM YYYY")
+        date(formatString: "D MMMM YYYY")
         path
         author
         excerpt

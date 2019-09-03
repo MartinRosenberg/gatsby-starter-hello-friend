@@ -768,7 +768,7 @@ type SitePluginPluginOptionsPluginsPluginOptions {
 
 type SiteSiteMetadata {
   author: String
-  copyrights: String
+  copyright: String
   defaultTheme: String
   description: String
   logo: SiteSiteMetadataLogo
@@ -1676,7 +1676,7 @@ enum SiteFieldsEnum {
   polyfill
   port
   siteMetadata___author
-  siteMetadata___copyrights
+  siteMetadata___copyright
   siteMetadata___defaultTheme
   siteMetadata___description
   siteMetadata___logoText
@@ -2532,7 +2532,7 @@ input SitePluginSortInput {
 
 input SiteSiteMetadataFilterInput {
   author: StringQueryOperatorInput
-  copyrights: StringQueryOperatorInput
+  copyright: StringQueryOperatorInput
   defaultTheme: StringQueryOperatorInput
   description: StringQueryOperatorInput
   logo: SiteSiteMetadataLogoFilterInput

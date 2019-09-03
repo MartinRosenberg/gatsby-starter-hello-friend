@@ -4,7 +4,7 @@ import React from 'react'
 import style from '../styles/icon.module.css'
 
 const Icon = props => {
-  const { d, size = '1em', label, style: styles } = props
+  const { d, size, label, style: styles } = props
 
   return (
     <span className={style.root} style={styles} role="figure">
@@ -22,9 +22,13 @@ const Icon = props => {
   )
 }
 
+Icon.defaultProps = {
+  size: '1em',
+}
+
 Icon.propTypes = {
   d: PropTypes.string,
-  size: PropTypes.number,
+  size: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
   label: PropTypes.string,
   style: PropTypes.object,
 }

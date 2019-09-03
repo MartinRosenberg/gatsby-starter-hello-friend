@@ -1,20 +1,20 @@
 import * as PropTypes from 'prop-types'
 import React from 'react'
 
-const Footer = ({ copyrights }) => (
+const Footer = ({ copyright }) => (
   <footer>
-    {copyrights ? (
+    {copyright ? (
       <div
         dangerouslySetInnerHTML={{
-          __html: copyrights,
+          __html: copyright,
         }}
       />
     ) : (
       <>
-        <span className="footerCopyrights">
+        <span className="footerCopyright">
           © 2019 Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
         </span>
-        <span className="footerCopyrights">
+        <span className="footerCopyright">
           Starter created by <a href="https://radoslawkoziel.pl">panr</a>
         </span>
       </>
@@ -23,7 +23,7 @@ const Footer = ({ copyrights }) => (
 )
 
 Footer.propTypes = {
-  copyrights: PropTypes.string,
+  copyright: PropTypes.string,
 }
 
 export default Footer
